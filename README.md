@@ -25,5 +25,9 @@ This will start the development server and you can access the application in you
 
 The initial quiz is provided via a data migration. You can see the quiz via the admin panel or the sqlite database.
 
+## Unimplemented functionality
+
+I implemented the web app allowing the admin to create a "quiz", including a sample quiz with some questions. I was unable to implement the second portion that would mimic a user taking the quiz in time. There is essentially some broken code and logic for that using the `QuizResponse` and `QuestionResponse` models, the corresponding forms and the `create_response` view.
+
 
 
