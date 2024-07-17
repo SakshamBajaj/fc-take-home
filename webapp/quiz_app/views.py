@@ -31,6 +31,10 @@ def create_quiz(request):
 
     if form.is_valid():
         form.save()
+        # bottom is a hack that doesn't make sense as it makes a single response for each quiz
+
+        response = QuizResponse.objects.create(quiz=form.instance)
+        response.save()
         return redirect(get_success_url(form.instance))
     context['form'] = form
 
@@ -53,6 +57,32 @@ def create_question(request, quiz_id):
         if 'finish' in request.POST: # TODO: fix this bad hack
             return redirect(finished_url)
         return redirect(success_url)
+    context['form'] = form
+
+    return render(request, template_name, context)
+
+def create_response(request, response_id, question_id):
+    def get_success_url(response):
+        
+        return f'/quiz_app/'
+    
+    template_name = 'quiz_app/create_view.html'
+    response = get_object_or_404(QuizResponse, id=response_id)
+    question = get_object_or_404(Question, id=question_id)
+    context = {
+        'header': f"Response"
+    }
+    initial = {
+        'question': question
+    }
+    if request.method == 'POST':
+        form = ResponseForm(request.POST, instance=response)
+        if form.is_valid():
+            form.save()
+            return redirect(get_success_url(response))
+    else:
+        form = ResponseForm(initial=initial)
+
     context['form'] = form
 
     return render(request, template_name, context)

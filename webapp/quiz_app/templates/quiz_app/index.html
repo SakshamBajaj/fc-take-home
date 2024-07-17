@@ -9,7 +9,10 @@
          <div class="card-body">
             <h5 class="card-title">{{ quiz.title }}</h5>
             <p class="card-text">{{ quiz.description }}</p>
-            
+            {% if quiz.questions.count > 0 %}
+
+            <a href="response/{{quiz.id}}/question/{{quiz.questions.first.id}}/create_response" class="btn btn-success">Take Quiz</a>
+            {% endif %}
          </div>
       </div>
    {% endfor %}
