@@ -1,0 +1,84 @@
+p,
+.blueForms {
+    font-family: 'Roboto', sans-serif;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    letter-spacing: 3pt;
+    color: #455f69;
+}
+
+.card-header>h3 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #303547 !important;
+}
+
+
+.card-header {
+    background-color: #f5f5f5;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 70vw;
+    justify-content: center;
+    justify-self: center;
+}
+
+.header {
+    height: 10%;
+    padding: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+
+}
+
+.blueForms {
+    color: #303547;
+}
+
+.btn-primary {
+    background-color: #303547;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+
+    letter-spacing: 1px;
+    border-color: #e6e6e6;
+    justify-content: center;
+    align-self: center;
+}
+
+.btn {
+    background-color: #303547;
+    outline: #303547;
+    color: white,
+}
+
+input:checked~.custom-control-label::before {
+    background-color: #303547;
+}
+
+.radiotext {
+    margin: 10px 10px 0px 0px;
+}
+
+
