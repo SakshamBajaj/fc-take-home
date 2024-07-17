@@ -13,12 +13,13 @@ Given that this is timed to only 3 hours, and my role is backend focused: I deci
 Create a virtual environment if you like, and then the project can be initialized with:
 
 ```
+cd webapp/
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
-This will start the development server and you can access the application in your browser at `http://localhost:3000`.
+This will start the development server and you can access the application in your browser at `http://localhost:8000`.
 
 
 
