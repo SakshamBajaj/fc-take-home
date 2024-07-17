@@ -23,11 +23,11 @@ class QuestionForm(forms.ModelForm):
     helper = FormHelper()
 
     helper.layout = Layout(
-        Field('question', css_class='input-sm', rows='2'),
+        Field('question_text', css_class='input-sm', rows='2'),
         Field('model_answer', css_class='input-xlarge'),
         Submit('submit', 'Add Question'),
         Submit('finish', 'Finish Creating Quiz')
     )
     class Meta:
         model = Question
-        fields = ['question', 'model_answer']
+        fields = ['question_text', 'model_answer']

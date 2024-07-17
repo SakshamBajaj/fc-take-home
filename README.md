@@ -21,5 +21,9 @@ python manage.py runserver
 ```
 This will start the development server and you can access the application in your browser at `http://localhost:8000`.
 
+## Initial Data
+
+The initial quiz is provided via a data migration. You can see the quiz via the admin panel or the sqlite database.
+
 
 

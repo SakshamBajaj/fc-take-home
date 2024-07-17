@@ -13,10 +13,10 @@ class Quiz(models.Model):
         return self.title
 
 class Question(models.Model):
-    question = models.TextField()
+    question_text = models.TextField()
     model_answer = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.question
+        return self.question_text
