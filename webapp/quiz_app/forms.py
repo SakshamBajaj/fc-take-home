@@ -8,46 +8,26 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from .models import *
 
 
-class MessageForm(forms.Form):
-    text_input = forms.CharField()
+class QuizForm(forms.ModelForm):
 
-    textarea = forms.CharField(
-        widget = forms.Textarea(),
-    )
-
-    radio_buttons = forms.ChoiceField(
-        choices = (
-            ('option_one', "Option one is this and that be sure to include why it's great"), 
-            ('option_two', "Option two can is something else and selecting it will deselect option one")
-        ),
-        widget = forms.RadioSelect,
-        initial = 'option_two',
-    )
-
-    appended_text = forms.CharField(
-        help_text = "Here's more help text"
-    )
-
-    prepended_text = forms.CharField()
-
-    prepended_text_two = forms.CharField()
-
-    
     helper = FormHelper()
-    helper.form_class = 'blueForms form-horizontal'
-    helper.label_class = 'col-lg-2'
-    helper.field_class = 'col-lg-8'
+    helper.add_input(Submit('submit', 'Create Quiz'))
+
+    class Meta:
+        model = Quiz
+        fields = ['title', 'description']
+
+
+class QuestionForm(forms.ModelForm):
+
+    helper = FormHelper()
+
     helper.layout = Layout(
-        Field('text_input'),
-        Field('textarea', rows="3"),
-        'radio_buttons',
-        Field('checkboxes', style="background: #FAFAFA; padding: 10px;"),
-        AppendedText('appended_text', '.00'),
-        PrependedText('prepended_text', '<input type="checkbox" checked="checked" value="" id="" name="">', active=True),
-        PrependedText('prepended_text_two', '@'),
-        'multicolon_select',
-        FormActions(
-            Submit('save_changes', 'Save changes', css_class="btn-primary"),
-            Submit('cancel', 'Cancel'),
-        )
+        Field('question', css_class='input-sm', rows='2'),
+        Field('model_answer', css_class='input-xlarge'),
+        Submit('submit', 'Add Question'),
+        Submit('finish', 'Finish Creating Quiz')
     )
+    class Meta:
+        model = Question
+        fields = ['question', 'model_answer']

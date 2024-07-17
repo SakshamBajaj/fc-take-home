@@ -1,4 +1,4 @@
-# Take Home Interview
+# Quiz App Interview
 
 Tech Stack:
 - Django
